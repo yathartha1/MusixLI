@@ -6,9 +6,11 @@ setup(
     install_requires = [
         'Click',
         'pymusixmatch',
+        'prompt_toolkit',
     ],
     entry_points = '''
         [console_scripts]
-        musixli = musixli:start
+        musixli = musixli.main:cli
+        msx = musixli.main_msx:cli
     ''',
     )

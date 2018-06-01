@@ -1,3 +1,4 @@
 musixli/__pycache__
-musixli/MusixLI.egg-info
-musixli/venv
+MusixLI.egg-info
+venv
+musixli/api_key.py
