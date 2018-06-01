@@ -2,7 +2,7 @@
 import click
 from .msx import msx
 
-class msx_cli(object):
+class msx_cli:
     @click.group()
     def begin():
         pass
