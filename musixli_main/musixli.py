@@ -15,10 +15,10 @@ from prompt_toolkit.styles import style_from_pygments
 import subprocess, sys
 
 class musixli:
-    musix_completer = WordCompleter(['artists', 'songs', 'search', 'albums', 'clear', '--country', '--song', '--artist', '--artist-name'], ignore_case = True)
+    musix_completer = WordCompleter(['artists', 'songs', 'search', 'albums', 'related_artists', 'clear', '--country', '--song', '--artist', '--artist-name', '--number'], ignore_case = True)
     def __init__(self):
         def get_toolbar(self):
-            return [(Token.Toolbar.Status.Key, '[ctrl+q] Exit')]
+            return [(Token.Toolbar.Status.Key, '[msx] Help      [ctrl+q] Exit')]
 
         updated_style = style_from_pygments(TangoStyle, {
             Token.Menu.Completions.Completion.Current: 'bg:#acba36 #000000',
@@ -27,7 +27,7 @@ class musixli:
             Token.Scrollbar: 'bg:#acba36',
             Token.Scrollbar.Button: 'bg:#003333',
             Token.Toolbar: '#ffffff bg:#333333',
-            Token: '#ff0000 bold',
+            Token: '#00ffff bold',
             Token.Toolbar.Status.Key: '#ff0000'
         })
         history = InMemoryHistory()

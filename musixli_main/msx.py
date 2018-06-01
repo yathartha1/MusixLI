@@ -40,7 +40,7 @@ class msx:
                 else:
                     print(click.style('Genre: ', bold = True, fg = 'red') + 'No genre available\n')
         else:
-            print(click.style('No song name or artist provided', blink = True, fg = 'red'))
+            print(click.style('No song name or artist provided', blink = True, fg = 'magenta'))
 
     def albums(artist_name):
         if artist_name != '':
@@ -54,3 +54,19 @@ class msx:
                 print(click.style('Album Name: ', bold = True, fg = 'green') + album_list[i]['album']['album_name'])
                 print(end = '       ')
                 print(click.style('Number of Tracks: ', bold = True, fg = 'blue') + str(album_list[i]['album']['album_track_count']) + '\n' + click.style('       Release Date: ', bold = True, fg = 'yellow') + album_list[i]['album']['album_release_date'] + '\n')
+        else:
+            print(click.style('No artist provided', blink = True, fg = 'magenta'))
+
+    def related_artists(artist_name, number):
+        if artist_name != '':
+            track_val = musixmatch.track_search(q_artist = artist_name, q_track = '', page = 1, page_size = 1, s_track_rating='desc')
+            track_list = json.loads(json.dumps(track_val['message']['body']['track_list']))
+            artist_id = track_list[0]['track']['artist_id']
+            r_artist_val = musixmatch.artist_related_get(artist_id = artist_id, page = 1, page_size = number)
+            r_artist_list = json.loads(json.dumps(r_artist_val['message']['body']['artist_list']))
+            print('Artists Similar to ' + artist_name + ' :\n')
+            for i in range(0, len(r_artist_list)):
+                print(click.style(str(i+1), fg = 'cyan', bold = True), end = '      ')
+                print(click.style('Artist Name: ', bold = True, fg = 'green') + r_artist_list[i]['artist']['artist_name'] + '\n')
+        else:
+            print(click.style('No artist provided', blink = True, fg = 'magenta'))

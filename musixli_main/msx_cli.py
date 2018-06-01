@@ -36,10 +36,18 @@ class msx_cli:
     @click.option('--artist-name', default = '', help = 'Search by artist name. Must be in quotes.')
     def albums(artist_name):
         '''
-        Provides list of albums associated with an artist
+        Provides a list of albums associated with an artist
         '''
         msx.albums(artist_name)
 
+    @begin.command()
+    @click.option('--artist-name', default = '', help = 'Search by artist name. Must be in quotes.')
+    @click.option('--number', default = 5, help = 'Specify the number of artists. Default is 5.')
+    def related_artists(artist_name, number):
+        '''
+        Provides a list of artists similar to the specified artist
+        '''
+        msx.related_artists(artist_name, number)
 
     @begin.command()
     def clear():
