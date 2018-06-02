@@ -37,7 +37,7 @@ Usage:
 Examples:
 
     $ msx artists
-    $ msx artists --country IN
+    $ msx artists --country 'in'
 
 
 ### View Top Songs
@@ -51,7 +51,7 @@ Usage:
 Example:
 
     $ msx songs
-    $ msx artists --country IN
+    $ msx artists --country 'in'
 
 
 ### Search by Artist Name or Song Name
