@@ -22,7 +22,7 @@ If available, the auto-completer also automatically displays commands through a 
 
 Within the auto-completer, the same syntax applies:
 
-    musixli> msx <command> [options] [args]
+    musixli:$>> msx <command> [options] [args]
 
 ## Commands:
 
