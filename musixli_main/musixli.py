@@ -15,7 +15,7 @@ from prompt_toolkit.styles import style_from_pygments
 import subprocess, sys
 
 class musixli:
-    musix_completer = WordCompleter(['artists', 'songs', 'search', 'albums', 'related_artists', 'clear', '--country', '--song', '--artist', '--artist-name', '--number'], ignore_case = True)
+    musix_completer = WordCompleter(['artists', 'songs', 'search', 'albums', 'related_artists', 'lyrics', 'clear', '--country', '--song', '--artist', '--artist-name', '--number', '--index'], ignore_case = True)
     def __init__(self):
         def get_toolbar(self):
             return [(Token.Toolbar.Status.Key, '[msx] Help      [ctrl+q] Exit')]

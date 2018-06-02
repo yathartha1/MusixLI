@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-import json
-from .api_key import key
+import json, webbrowser
+from .config import config
 from musixmatch import Musixmatch
 import click
 
-key = key.get_key()
+cfg = config()
+key = cfg.get_key()
 musixmatch = Musixmatch(key)
 
 class msx:
+
     def artists(country):
         artist_json = musixmatch.chart_artists(country = country, page = 1, page_size = 20)
         artist_list = json.loads(json.dumps(artist_json['message']['body']['artist_list']))
@@ -70,3 +72,12 @@ class msx:
                 print(click.style('Artist Name: ', bold = True, fg = 'green') + r_artist_list[i]['artist']['artist_name'] + '\n')
         else:
             print(click.style('No artist provided', blink = True, fg = 'magenta'))
+
+    def lyrics(song, artist_name, browser):
+        if song != '' and artist_name != '':
+            match_val = musixmatch.matcher_track_get(q_track = song, q_artist = artist_name)
+            if browser == 'yes':
+                match_url = json.loads(json.dumps(match_val['message']['body']['track']['track_share_url']))
+                webbrowser.open(match_url)
+        else:
+            print(click.style('Song name and artist not provided', blink = True, fg = 'magenta'))

@@ -1,4 +1,4 @@
 musixli_main/__pycache__
 MusixLI.egg-info
 venv
-musixli_main/api_key.py
+musixli_main/config.py

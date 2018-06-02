@@ -5,7 +5,9 @@ from .msx import msx
 class msx_cli:
     @click.group()
     def begin():
-        pass
+        '''
+        A little tool that lets you search for different artists, albums, songs and their lyrics with just entering certain commands.
+        '''
 
     @begin.command()
     @click.option('--country', default = 'US' , help = 'Specify the country, default is US.')
@@ -25,12 +27,12 @@ class msx_cli:
 
     @begin.command()
     @click.option('--song', default = '', help = 'Search by song name. Must be in quotes.')
-    @click.option('--artist', default = '', help = 'Search by artist name. Must be in quotes.')
-    def search(song, artist):
+    @click.option('--artist-name', default = '', help = 'Search by artist name. Must be in quotes.')
+    def search(song, artist_name):
         '''
         Provides a detailed list based on the query.
         '''
-        msx.search(song, artist)
+        msx.search(song, artist_name)
 
     @begin.command()
     @click.option('--artist-name', default = '', help = 'Search by artist name. Must be in quotes.')
@@ -48,6 +50,16 @@ class msx_cli:
         Provides a list of artists similar to the specified artist
         '''
         msx.related_artists(artist_name, number)
+
+    @begin.command()
+    @click.option('--song', default = '', help = 'Specify the name of the song.')
+    @click.option('--artist-name', default = '', help = 'Specify the name of the artist')
+    @click.option('--browser', help = 'Open in a browser or not: (yes/no)', type = click.Choice(['yes', 'no']))
+    def lyrics(song, artist_name, browser):
+        '''
+        Opens a snippet of the lyrics of a specified song in the window itself or open the whole lyrics in the browser.
+        '''
+        msx.lyrics(song, artist_name, browser)
 
     @begin.command()
     def clear():
