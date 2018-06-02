@@ -77,7 +77,12 @@ class msx:
         if song != '' and artist_name != '':
             match_val = musixmatch.matcher_track_get(q_track = song, q_artist = artist_name)
             if browser == 'yes':
+                match_val = musixmatch.matcher_track_get(q_track = song, q_artist = artist_name)
                 match_url = json.loads(json.dumps(match_val['message']['body']['track']['track_share_url']))
                 webbrowser.open(match_url)
+            elif browser == 'no':
+                match_val = musixmatch.matcher_lyrics_get(q_track = song, q_artist = artist_name)
+                match_lyrics = json.loads(json.dumps(match_val['message']['body']['lyrics']['lyrics_body']))
+                click.echo_via_pager(match_lyrics)
         else:
             print(click.style('Song name and artist not provided', blink = True, fg = 'magenta'))

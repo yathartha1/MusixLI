@@ -54,7 +54,7 @@ class msx_cli:
     @begin.command()
     @click.option('--song', default = '', help = 'Specify the name of the song.')
     @click.option('--artist-name', default = '', help = 'Specify the name of the artist')
-    @click.option('--browser', help = 'Open in a browser or not: (yes/no)', type = click.Choice(['yes', 'no']))
+    @click.option('--browser', default = 'no', help = 'Open in a browser or not: (yes/no). Default is no', type = click.Choice(['yes', 'no']))
     def lyrics(song, artist_name, browser):
         '''
         Opens a snippet of the lyrics of a specified song in the window itself or open the whole lyrics in the browser.
