@@ -111,11 +111,11 @@ Examples:
 
 The following command will install `MusixLI`:
 
-    $ pip install MusixLI
+    $ pip3 install musixli
 
 If you are not installing in a virtualenv, run with `sudo`:
 
-    $ sudo pip install MusixLI
+    $ sudo pip3 install musixli
 
 Once installed, run the optional `MusixLI` auto-completer with interactive help:
 
