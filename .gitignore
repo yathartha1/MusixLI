@@ -3,3 +3,4 @@ musix/config.py
 dist/
 build/
 musixli.egg-info/
+Uploading-to-PyPI.txt
