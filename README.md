@@ -6,6 +6,26 @@
 * Albums
 * Lyrics
 
+## Installation
+
+### Pip Installation
+
+The following command will install `MusixLI`:
+
+    $ pip3 install musixli
+
+If you are not installing in a virtualenv, run with `sudo`:
+
+    $ sudo pip3 install musixli
+
+Once installed, run the optional `MusixLI` auto-completer with interactive help:
+
+    $ musixli
+
+Run commands:
+
+    $ msx <command> [options] [args]
+
 ## Syntax
 
 Usage:
@@ -51,7 +71,7 @@ Usage:
 Example:
 
     $ msx songs
-    $ msx artists --country 'in'
+    $ msx songs --country 'in'
 
 
 ### Search by Artist Name or Song Name
@@ -104,27 +124,6 @@ Examples:
 
     $ msx lyrics --artist-name 'Eminem' --song 'Lose Yourself'
     $ msx lyrics --artist-name 'Eminem' --song 'Lose Yourself' --browser 'yes'
-
-## Installation
-
-### Pip Installation
-
-The following command will install `MusixLI`:
-
-    $ pip3 install musixli
-
-If you are not installing in a virtualenv, run with `sudo`:
-
-    $ sudo pip3 install musixli
-
-Once installed, run the optional `MusixLI` auto-completer with interactive help:
-
-    $ musixli
-
-Run commands:
-
-    $ msx <command> [options] [args]
-
 
 ### Supported Python Versions
 

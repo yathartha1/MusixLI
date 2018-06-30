@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name = 'musixli',
-    version = '1.1.0',
+    version = '1.2.1',
     description = 'A command line application that lets you search for different artists, albums, songs and their lyrics.',
     long_description = long_description,
     long_description_content_type = "text/markdown",
@@ -20,7 +20,7 @@ setup(
     install_requires = [
         'click',
         'pymusixmatch',
-        'prompt_toolkit',
+        'prompt_toolkit == 1.0.15',
         'pygments'
     ],
     entry_points = {
