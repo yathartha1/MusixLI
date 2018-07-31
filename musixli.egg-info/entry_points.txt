@@ -1,0 +1,4 @@
+[console_scripts]
+msx = musix.main_msx:cli
+musixli = musix.main:cli
+

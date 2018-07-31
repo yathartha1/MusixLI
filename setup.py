@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name = 'musixli',
-    version = '1.2.1',
+    version = '2.1.0',
     description = 'A command line application that lets you search for different artists, albums, songs and their lyrics.',
     long_description = long_description,
     long_description_content_type = "text/markdown",

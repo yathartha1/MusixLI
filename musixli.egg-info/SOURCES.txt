@@ -1,0 +1,15 @@
+README.md
+setup.py
+musix/__init__.py
+musix/config.py
+musix/main.py
+musix/main_msx.py
+musix/msx.py
+musix/msx_cli.py
+musix/musixli.py
+musixli.egg-info/PKG-INFO
+musixli.egg-info/SOURCES.txt
+musixli.egg-info/dependency_links.txt
+musixli.egg-info/entry_points.txt
+musixli.egg-info/requires.txt
+musixli.egg-info/top_level.txt
